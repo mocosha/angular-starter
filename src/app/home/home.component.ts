@@ -4,8 +4,6 @@ import {
 } from '@angular/core';
 
 import { AppState } from '../app.service';
-import { Title } from './title';
-import { XLargeDirective } from './x-large';
 
 @Component({
   /**
@@ -17,9 +15,7 @@ import { XLargeDirective } from './x-large';
   /**
    * We need to tell Angular's Dependency Injection which providers are in our app.
    */
-  providers: [
-    Title
-  ],
+  providers: [],
   /**
    * Our list of styles in our component. We may add more to compose many styles together.
    */
@@ -29,29 +25,4 @@ import { XLargeDirective } from './x-large';
    */
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
-  /**
-   * Set our default values
-   */
-  public localState = { value: '' };
-  /**
-   * TypeScript public modifiers
-   */
-  constructor(
-    public appState: AppState,
-    public title: Title
-  ) {}
-
-  public ngOnInit() {
-    console.log('hello `Home` component');
-    /**
-     * this.title.getData().subscribe(data => this.data = data);
-     */
-  }
-
-  public submitState(value: string) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
-  }
-}
+export class HomeComponent { }
