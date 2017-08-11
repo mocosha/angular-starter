@@ -199,6 +199,11 @@ module.exports = function (options) {
         {
           test: /\.(eot|woff2?|svg|ttf)([\?]?.*)$/,
           use: 'file-loader'
+        },
+
+        {
+          test: require.resolve('jquery'),
+          use: [{ loader: 'expose-loader', options: '$' }]
         }
 
       ],
@@ -217,6 +222,14 @@ module.exports = function (options) {
       //   filename: 'webpack-assets.json',
       //   prettyPrint: true
       // }),
+
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
+        jquery: 'jquery'
+      }),
 
       /**
        * Plugin: ForkCheckerPlugin

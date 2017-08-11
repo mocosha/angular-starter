@@ -27,6 +27,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
 
+import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import '../styles/styles.scss';
 
 // Application wide providers
