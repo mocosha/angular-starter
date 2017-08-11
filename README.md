@@ -1,9 +1,8 @@
 <p align="center">
-    <img style="border-radius: 10px" src="https://avatars2.githubusercontent.com/u/18236411" width=72 height=72>
+    <img style="border-radius: 10px; border: 1px solid black"
+    src="https://avatars2.githubusercontent.com/u/18236411" width=72 height=72>
   <h2 align="center">Angular4 Mocosha Template</h2>
 </p>
-
-<hr>
 
 ## Template
 
