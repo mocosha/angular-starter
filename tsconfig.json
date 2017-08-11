@@ -30,7 +30,8 @@
       "uglify-js",
       "webpack",
       "jquery",
-      "bootstrap"
+      "bootstrap",
+      "moment"
     ]
   },
   "exclude": [
