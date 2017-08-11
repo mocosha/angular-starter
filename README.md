@@ -19,7 +19,7 @@ git remote add angular-template https://github.com/mocosha/angular-starter.git
 If a project repository contains multiple projects, and you want to create new project that is based on this template, go to root of all projects (where .git is initialized) and add:
 
 ```bash
-git subtree add --prefix=path/to/your/new/project angular-template mocosha-template
+git subtree add --prefix=path/to/your/new/project --squash angular-template mocosha-template
 
 git pull angular-template mocosha-template
 ```
@@ -27,5 +27,5 @@ git pull angular-template mocosha-template
 Or if a project is in new repository just run:
 
 ```bash
-git pull angular-template mocosha-template
+git pull --sqash angular-template mocosha-template
 ```
