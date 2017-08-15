@@ -21,11 +21,10 @@ If a project repository contains multiple projects, and you want to create new p
 ```bash
 git subtree add --prefix=path/to/your/new/project --squash angular-template mocosha-template
 
-git pull angular-template mocosha-template
 ```
 
 Or if a project is in new repository just run:
 
 ```bash
-git pull --sqash angular-template mocosha-template
+git pull --squash angular-template mocosha-template
 ```

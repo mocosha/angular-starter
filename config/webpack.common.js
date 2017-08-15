@@ -135,7 +135,7 @@ module.exports = function (options) {
             {
               loader: 'awesome-typescript-loader',
               options: {
-                configFileName: 'tsconfig.webpack.json',
+                configFileName: 'tsconfig.json',
                 useCache: !isProd
               }
             },
