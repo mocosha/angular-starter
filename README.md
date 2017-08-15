@@ -27,3 +27,19 @@ Or if a project is in new repository just run:
 ```bash
 git pull --squash angular-template mocosha-template
 ```
+
+## Update
+
+> Notice: You need to always squash commits when pulling this template
+
+After, if you want to update project with changes from mocosha-template run:
+
+```bash
+git subtree pull --prefix="src/Crm/Portal" --squash angular-template mocosha-template
+```
+
+Or if it's the only project in repository:
+
+```bash
+git pull --squash angular-template mocosha-template
+```
