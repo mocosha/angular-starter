@@ -2,5 +2,7 @@
     "typescript.tsdk": "node_modules/typescript/lib/",
     "html.format.wrapAttributes": "force-aligned",
     "editor.detectIndentation": false,
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true
 }
