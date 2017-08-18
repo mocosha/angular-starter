@@ -22,17 +22,18 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
+
+import { PIPES } from './pipes';
+import { SERVICES } from './services';
 
 import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import '../styles/styles.scss';
 
 // Application wide providers
 const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
   AppState
 ];
 
@@ -51,6 +52,7 @@ type StoreType = {
     AppComponent,
     HomeComponent,
     NoContentComponent,
+    ...PIPES
   ],
   /**
    * Import Angular's modules.
@@ -66,7 +68,8 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    ...SERVICES,
   ]
 })
 export class AppModule {
