@@ -9,8 +9,8 @@ export class DateMomentFilter implements PipeTransform {
         this._configProvider = configProvider;
     }
 
-    transform(date: Date | string | number, format?: string, timezone?: string): string {
-        var m = moment(date);
+    public transform(date: Date | string | number, format?: string, timezone?: string): string {
+        let m = moment(date);
 
         if (typeof format !== 'string' || format.length < 1) {
             format = this._configProvider.dateTimeFormat;

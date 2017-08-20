@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'distance', pure: false })
 export class DistanceFilter implements PipeTransform {
-    static measures = {
+    private static measures = {
         'm': { value: 1 },
         'km': { value: 0.001 },
         'cm': { value: 100 },
@@ -14,7 +14,7 @@ export class DistanceFilter implements PipeTransform {
         'yd': { value: (1 / 0.9144) }
     };
 
-    transform(distance: number, unit?: string, round?: number, reverse?: boolean): number {
+    public transform(distance: number, unit?: string, round?: number, reverse?: boolean): number {
         if (distance === 0) {
             return 0;
         }
@@ -33,8 +33,8 @@ export class DistanceFilter implements PipeTransform {
         }
     }
 
-    round(value, n) {
-        var decPlace = Math.pow(10, n);
+    private round(value, n) {
+        let decPlace = Math.pow(10, n);
         return Math.round(value * decPlace) / decPlace;
     }
 }
