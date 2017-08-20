@@ -32,8 +32,7 @@
     "no-output-rename": true,
     "pipe-naming": [
       true,
-      "camelCase",
-      "my"
+      "camelCase"
     ],
     "templates-use-public": true,
     "use-host-property-decorator": true,
@@ -84,6 +83,10 @@
         ]
       }
     ],
-    "arrow-parens": false
+    "arrow-parens": false,
+    "object-literal-key-quotes": [
+      false
+    ],
+    "no-empty": false
   }
 }
