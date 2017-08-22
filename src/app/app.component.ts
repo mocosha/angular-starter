@@ -19,16 +19,8 @@ import { AppState } from './app.service';
     './app.component.css'
   ],
   template: `
-    <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-    </nav>
-
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+    <router-outlet>
+    </router-outlet>
   `
 })
 export class AppComponent { }
