@@ -362,7 +362,7 @@ module.exports = function (options) {
       new ScriptExtHtmlWebpackPlugin({
         sync: /polyfills|vendor/,
         defaultAttribute: 'async',
-        preload: [/polyfills|vendor|main/],
+        preload: [/polyfills|vendor/],
         prefetch: [/chunk/]
       }),
 
