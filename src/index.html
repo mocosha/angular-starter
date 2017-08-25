@@ -24,6 +24,10 @@
   <!-- CSS will be injected by webpack here -->
   <!-- Preload link tags will be injected by webpack here -->
 
+  <script>
+    var AppConfig = JSON.parse('<%= htmlWebpackPlugin.options.metadata.appConfig %>');
+  </script>
+
 </head>
 
 <body>

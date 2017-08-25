@@ -24,16 +24,29 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
+const path = require('path');
+const webpackMerge = require('webpack-merge'); // used to merge webpack configs
+const fs = require('fs');
+
+var baseAppConfig = require('./app-config.js').AppConfig;
+
+if (fs.existsSync(path.join(__dirname, './app-config.dev.js'))) {
+    baseAppConfig = webpackMerge(baseAppConfig, require('./app-config.dev.js').AppConfig);
+}
+
+const appConfig = baseAppConfig;
+
 /**
  * Webpack Constants
  */
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-  baseUrl: '/',
+  title: appConfig.title,
+  baseUrl: appConfig.baseUrl,
   isDevServer: helpers.isWebpackDevServer(),
-  HMR: HMR
+  HMR: HMR,
+  appConfig: JSON.stringify(appConfig)
 };
 
 /**
