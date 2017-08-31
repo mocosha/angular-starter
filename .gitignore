@@ -72,3 +72,6 @@ dll/
 *.shim.ngstyle.ts
 
 /config/app-config.dev.js
+
+# Build
+./build.archived.zip
