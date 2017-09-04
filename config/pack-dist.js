@@ -3,9 +3,7 @@ var fs = require('fs');
 var archiver = require('archiver');
 var outputFile = __dirname + '/../build.archived.zip';
 
-console.log('pre provere');
 if(fs.existsSync(outputFile)){
-    console.log('usao');
     fs.unlinkSync(outputFile);
 }
 
