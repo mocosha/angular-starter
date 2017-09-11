@@ -46,7 +46,8 @@ const METADATA = {
   baseUrl: appConfig.baseUrl,
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR,
-  appConfig: JSON.stringify(appConfig)
+  AOT: AOT,
+  appConfig: JSON.stringify(appConfig),
 };
 
 /**
@@ -127,13 +128,6 @@ module.exports = function (options) {
         {
           test: /\.ts$/,
           use: [
-            {
-              loader: '@angularclass/hmr-loader',
-              options: {
-                pretty: !isProd,
-                prod: isProd
-              }
-            },
             {
               /**
                *  MAKE SURE TO CHAIN VANILLA JS CODE, I.E. TS COMPILATION OUTPUT.
@@ -293,7 +287,7 @@ module.exports = function (options) {
         /**
          * The (\\|\/) piece accounts for path separators in *nix and Windows
          */
-        /angular(\\|\/)core(\\|\/)@angular/,
+        /(.+)?angular(\\|\/)core(.+)?/,
         helpers.root('src'), // location of your src
         {
           /**
@@ -347,11 +341,14 @@ module.exports = function (options) {
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         title: METADATA.title,
-        chunksSortMode: 'dependency',
+        chunksSortMode: function (a, b) {
+          const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+          return entryPoints.indexOf(a.names[0]) - entryPoints.indexOf(b.names[0]);
+        },
         metadata: METADATA,
         inject: 'body'
       }),
-      
+
        /**
        * Plugin: ScriptExtHtmlWebpackPlugin
        * Description: Enhances html-webpack-plugin functionality
