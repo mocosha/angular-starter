@@ -5,6 +5,7 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
+  "defaultSeverity": "warning",
   "rules": {
     // Custom
     "trailing-comma": [
@@ -24,16 +25,16 @@
     "directive-class-suffix": true,
     // "directive-selector": [true, "attribute", "my", "camelCase"],
     "import-destructuring-spacing": true,
-    "invoke-injectable": true,
-    "no-access-missing-member": true,
     "no-attribute-parameter-decorator": true,
-    "no-forward-ref": true,
+    "no-forward-ref": false,
     "no-input-rename": true,
     "no-output-rename": true,
     "only-arrow-functions": false,
-    "pipe-naming": [true, "camelCase"],
-    "templates-use-public": true,
-    "use-host-property-decorator": true,
+    "pipe-naming": [
+      true,
+      "camelCase"
+    ],
+    "use-host-property-decorator": false,
     "use-input-property-decorator": true,
     "use-life-cycle-interface": true,
     "use-output-property-decorator": true,
@@ -47,7 +48,7 @@
     ],
     "max-line-length": [
       true,
-      120
+      140
     ],
     "no-string-literal": false,
     "no-use-before-declare": true,
@@ -69,9 +70,9 @@
       true,
       {
         "order": [
-          "constructor",
           "static-field",
           "static-method",
+          "constructor",
           "public-instance-field",
           "public-instance-method",
           "protected-instance-field",
@@ -85,6 +86,29 @@
     "object-literal-key-quotes": [
       false
     ],
-    "no-empty": false
+    "no-empty": false,
+    "object-literal-shorthand": false,
+    "max-classes-per-file": false,
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-module",
+        "check-operator",
+        "check-preblock",
+        "check-rest-spread",
+        "check-separator",
+        "check-type",
+        "check-type-operator"
+      ]
+    },
+    "no-bitwise": false,
+    "prefer-const": false,
+    "space-before-function-paren": {
+      "options": {
+        "anonymous": "always"
+      }
+    },
+    "ban-types": false
   }
 }
