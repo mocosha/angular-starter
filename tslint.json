@@ -5,7 +5,7 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
-  "defaultSeverity": "warning",
+  "defaultSeverity": "error",
   "rules": {
     // Custom
     "trailing-comma": [
