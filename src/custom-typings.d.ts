@@ -133,4 +133,4 @@ declare var AppConfig: {
   title: string;
   version: string;
   baseUrl: string;
-}
+};
