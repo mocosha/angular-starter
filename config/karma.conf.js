@@ -71,11 +71,6 @@ module.exports = function (config) {
      */
     webpackMiddleware: {
       /**
-       * webpack-dev-middleware configuration
-       * i.e.
-       */
-      noInfo: true,
-      /**
        * and use stats to turn off verbose output
        */
       stats: {
