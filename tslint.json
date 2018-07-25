@@ -8,29 +8,18 @@
     ]
   },
   "rulesDirectory": [
-    "node_modules/codelyzer"
+    "node_modules/codelyzer",
+    "node_modules/rxjs-tslint"
   ],
   "defaultSeverity": "warning",
   "rules": {
-    // Custom
-    "trailing-comma": [
-      false,
-      {
-        "multiline": "always",
-        "singleline": "never"
-      }
-    ],
-    "interface-name": [
-      false,
-      "always-prefix"
-    ],
-    // Angular 2
+    "trailing-comma": [false, {"multiline": "always", "singleline": "never"}],
+    "interface-name": [false, "always-prefix"],
     "component-class-suffix": true,
     // "component-selector": [true, "element", "my", "kebab-case"],
     "directive-class-suffix": true,
     // "directive-selector": [true, "attribute", "my", "camelCase"],
     "import-destructuring-spacing": true,
-    "no-output-on-prefix-name": true,
     "no-attribute-parameter-decorator": true,
     "no-forward-ref": false,
     "no-input-rename": true,
@@ -45,9 +34,7 @@
     "use-life-cycle-interface": true,
     "use-output-property-decorator": true,
     "use-pipe-transform-interface": true,
-    // General
-    "no-console": [
-      true,
+    "no-console": [true,
       "time",
       "timeEnd",
       "trace"
@@ -115,6 +102,10 @@
         "anonymous": "always"
       }
     },
-    "ban-types": false
+    "ban-types": false,
+    "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true
   }
 }
