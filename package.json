@@ -95,7 +95,7 @@
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.2.1",
+    "rxjs": "^6.3.3",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
