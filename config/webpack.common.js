@@ -154,6 +154,13 @@ module.exports = function(options) {
         {
           test: require.resolve('jquery'),
           use: [{ loader: 'expose-loader', options: '$' }]
+        },
+
+        {
+            // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
+            // Removing this will cause deprecation warnings to appear.
+            test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+            parser: { system: true },  // enable SystemJS
         }
       ]
     },
@@ -303,9 +310,6 @@ module.exports = function(options) {
       module: false,
       clearImmediate: false,
       setImmediate: false
-    },
-    stats: {
-      warningsFilter: /System.import/
     }
   };
 };
