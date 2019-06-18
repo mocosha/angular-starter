@@ -96,7 +96,7 @@
     "moment-timezone": "^0.5.25",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.5.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-optimizer": "^0.10.5",
